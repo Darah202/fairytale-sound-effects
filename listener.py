@@ -4,31 +4,46 @@ Transcribing speech from microphone input
 
 import speech_recognition as sr
 import pyaudio
-import nltk
-from nltk.tokenize import PunktSentenceTokenizer
 
-# Creates a recognizer instance
-r = sr.Recognizer()
+class Listener:
+    """
+    This class is used to record audio data and transcribe the spoken words to
+    text
 
-# Use default system microphone as source
-print("use default microphone as source:")
-mic = sr.Microphone()
+    Attributes:
+        _recognizer:  A 'speech_recognition.Recognizer' instance which is used
+        to recognize speech
+    """
 
-# Use specified microphone as source
-#mic = sr.Microphone(device_index = 2)
+    def __init__(self):
+        """
+        This method creates a recognizer instance
+        """
 
-try:
-    # Record Data from Microphone input
-    print("Start reading!")
-    with mic as source:
-        r.adjust_for_ambient_noise(source)
-        audio = r.listen(source)
+        # Creates a recognizer instance
+        self._recognizer = sr.Recognizer()
 
-    # Invokes Google Web Speech API & outputs text
-    print("Here's what you said: ")
-    text_output = r.recognize_google(audio)
-    print(text_output.lower())
+    def listening(self):
+        """
+        This method records 3 seconds of audio and transcribes it to text.
 
-except:
-    print("Could not Recognize speech")
-    understood_speech = 0
+        """
+        # Use default system microphone as source
+        print("use default microphone as source:")
+        mic = sr.Microphone()
+
+        try:
+            # Record Data from Microphone input for 3 seconds
+            print("Start reading!")
+            with mic as source:
+                self._recognizer.adjust_for_ambient_noise(source)
+                audio = self.recognizer.listen(source, duration=3)
+
+            # Invokes Google Web Speech API & outputs text
+            print("Here's what you said: ")
+            text_output = self._recognizer.recognize_google(audio)
+            print(text_output.lower())
+
+        except:
+            print("Could not Recognize speech")
+            understood_speech = 0
