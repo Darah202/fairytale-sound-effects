@@ -1,6 +1,4 @@
 import pygame
-import pydub
-from pydub import AudioSegment
 import os
 
 os.chdir("Audio/Sound_Effects/Footsteps/")
@@ -11,3 +9,5 @@ sounda = pygame.mixer.Sound("Footsteps Sound Effect (Royalty Free)-nS9VmrOzd7o.w
 sounda.play()
 
 # youtube-dl -x --audio-format mp3 --audio-quality 256K 'URL'
+
+# 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
