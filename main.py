@@ -1,13 +1,8 @@
 import pygame
-import pydub
-from pydub import AudioSegment
-import os
-
-os.chdir("Audio/Sound_Effects/Footsteps/")
+import time
 
 pygame.init()
 pygame.mixer.init()
-sounda = pygame.mixer.Sound("Footsteps Sound Effect (Royalty Free)-nS9VmrOzd7o.wav")
+sounda = pygame.mixer.Sound("Audio/Sound_Effects/Footsteps/footsteps_1.wav")
 sounda.play()
-
-# youtube-dl -x --audio-format mp3 --audio-quality 256K 'URL'
+time.sleep(8) # specify sleep time as length of file/time wanted to play for
