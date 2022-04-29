@@ -22,22 +22,28 @@ class Listener:
 
         # Creates a recognizer instance
         self._recognizer = sr.Recognizer()
+        
+        # Use default system microphone as source
+        print("use default microphone as source:")
+        self._mic = sr.Microphone()
+
 
     def listening(self):
         """
         This method records 3 seconds of audio and transcribes it to text.
 
+        returns:
+        text_output:  A string containing the words detected in the 3 seconds
+        of recorded audio data.
+
         """
-        # Use default system microphone as source
-        print("use default microphone as source:")
-        mic = sr.Microphone()
 
         try:
             # Record Data from Microphone input for 3 seconds
             print("Start reading!")
-            with mic as source:
+            with self._mic as source:
                 self._recognizer.adjust_for_ambient_noise(source)
-                audio = self.recognizer.listen(source, duration=3)
+                audio = self._recognizer.listen(source)
 
             # Invokes Google Web Speech API & outputs text
             print("Here's what you said: ")
@@ -46,4 +52,10 @@ class Listener:
 
         except:
             print("Could not Recognize speech")
-            understood_speech = 0
+            text_output = ""
+            print(text_output.lower())
+
+        return text_output
+
+get_audio = Listener()
+get_audio.listening()
