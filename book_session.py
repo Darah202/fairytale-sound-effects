@@ -58,7 +58,7 @@ class BookSession():
         pygame.init()
         pygame.mixer.init()
         file_name = self.pick_random_audio(location)
-        sounda = pygame.mixer.Sound(f"Audio/Sound_Effects/Footsteps")
+        sounda = pygame.mixer.Sound(f"Audio/Sound_Effects/Footsteps/{file_name}")
        #{location[0]}/{location[1]}/{file_name}
         sounda.play()
         time.sleep(8)
