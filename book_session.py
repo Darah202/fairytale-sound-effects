@@ -23,9 +23,6 @@ class BookSession():
         
         self._music_keys = ["Beginning", "Sad"]
 
-        pygame.init()
-        pygame.mixer.init()
-
     def check_for_key_word(self, transcribed_text):
         """
         """
@@ -52,13 +49,17 @@ class BookSession():
     def pick_random_audio(self, location):
         """
         """
-        return random.choice(os.listdir(f"Audio/{location[0]}/{location[1]}/"))
+        return random.choice(os.listdir(f"Audio/Sound_Effects/Footsteps"))
+        #{location[0]}/{location[1]}/
 
     def play_audio(self, location, audio_name):
         """
         """
+        pygame.init()
+        pygame.mixer.init()
         file_name = self.pick_random_audio(location)
-        sounda = pygame.mixer.Sound(f"Audio/{location[0]}/{location[1]}/{file_name}")
+        sounda = pygame.mixer.Sound(f"Audio/Sound_Effects/Footsteps")
+       #{location[0]}/{location[1]}/{file_name}
         sounda.play()
         time.sleep(8)
 
