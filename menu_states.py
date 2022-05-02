@@ -30,16 +30,32 @@ class FairytaleMenu:
         """
         Creates an empty tic-tac-toe board
         """
-        self._menu = ["Cinderella", "The 3 Little Pigs"]
+        self.menu = "Welcome to Fairytale Sound Effects!  Press enter to begin"
+        #self._menu = ["Cinderella", "The 3 Little Pigs"]
 
-    def select_book(self, book_number):
+    def ask_which_book(self):
         """
         This function returns a string equal to the name of the chosen book
 
         Returns:
             A string equal to the name of the chosen book
         """
-        return self._board[book_number]
+
+        self.menu = "Select a book - type the number of the book and press enter \n 1. Cinderella \n 2. The 3 Little Pigs"
+
+        #return self._menu[book_number]
+
+    def book_choice(self, book_title):
+        """
+        This function returns a string equal to the name of the chosen book
+
+        Returns:
+            A string equal to the name of the chosen book
+        """
+
+        self.menu = f"Great choice!  You are reading {book_title}.  Begin reading out loud now."
+
+        #return self._menu[book_number]
 
     def __repr__(self):
         """
@@ -53,6 +69,6 @@ class FairytaleMenu:
             _board_representation: A string representing the tic-tac-toe board
             with the appropriate spaces filled in
         """
-        _menu_representation = f"Choose a book to read:\n {self._menu[1]}\n{self._menu[2]}"
+        #_menu_representation = f"Choose a book to read:\n {self._menu[1]}\n{self._menu[2]}"
 
-        return _menu_representation
+        #return _menu_representation
