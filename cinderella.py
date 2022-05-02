@@ -1,5 +1,6 @@
 """
 """
+from book_session import add_key_word
 from book_session import BookSession
 
 
@@ -10,42 +11,38 @@ class Cinderella(BookSession):
         super(Cinderella, self).__init__()
 
         # Add specific words to the keys for each music group
-        self.key_words = add_key_word(self.key_words, "Beginning", "poof")
-        self.key_words = add_key_word(self.key_words, "Beginning", "grant")
-        self.key_words = add_key_word(self.key_words, "Beginning", "wand")
-        self.key_words = add_key_word(self.key_words, "Beginning", "gone")
-        self.key_words = add_key_word(self.key_words, "Beginning", "turned")
-        self.key_words = add_key_word(self.key_words, "Wind", "blow")
-        self.key_words = add_key_word(self.key_words, "Scary", "shout")
-        self.key_words = add_key_word(self.key_words, "Scary", "scream")
-        self.key_words = add_key_word(self.key_words, "Scary", "yell")
-        self.key_words = add_key_word(self.key_words, "Scary", "only")
-        self.key_words = add_key_word(self.key_words, "Scary", "cried")
-        self.key_words = add_key_word(self.key_words, "Scary", "scream")
-        self.key_words = add_key_word(self.key_words, "Scary", "quiet")
-        self.key_words = add_key_word(self.key_words, "Festive", "bride")
-        self.key_words = add_key_word(self.key_words, "Festive", "joy")
-        self.key_words = add_key_word(self.key_words, "Festive", "wonderful")
-        self.key_words = add_key_word(self.key_words, "Festive", "heart")
-        self.key_words = add_key_word(self.key_words, "Festive", "room") # Second only
-        self.key_words = add_key_word(self.key_words, "Festive", "perfect")
-        self.key_words = add_key_word(self.key_words, "Sad", "work")
-        self.key_words = add_key_word(self.key_words, "Sad", "dirty")
-        self.key_words = add_key_word(self.key_words, "Sad", "wrong")
-        self.key_words = add_key_word(self.key_words, "Sad", "left")
-        self.key_words = add_key_word(self.key_words, "Sad", "sad")
-        self.key_words = add_key_word(self.key_words, "Horse", "rode")
-        self.key_words = add_key_word(self.key_words, "Horse", "off")
+        self._key_words = add_key_word(self._key_words, "Beginning", "poof")
+        self._key_words = add_key_word(self._key_words, "Beginning", "grant")
+        self._key_words = add_key_word(self._key_words, "Beginning", "wand")
+        self._key_words = add_key_word(self._key_words, "Beginning", "gone")
+        self._key_words = add_key_word(self._key_words, "Beginning", "turned")
+        self._key_words = add_key_word(self._key_words, "Wind", "blow")
+        self._key_words = add_key_word(self._key_words, "Scary", "shout")
+        self._key_words = add_key_word(self._key_words, "Scary", "scream")
+        self._key_words = add_key_word(self._key_words, "Scary", "yell")
+        self._key_words = add_key_word(self._key_words, "Scary", "only")
+        self._key_words = add_key_word(self._key_words, "Scary", "cried")
+        self._key_words = add_key_word(self._key_words, "Scary", "scream")
+        self._key_words = add_key_word(self._key_words, "Scary", "quiet")
+        self._key_words = add_key_word(self._key_words, "Festive", "bride")
+        self._key_words = add_key_word(self._key_words, "Festive", "joy")
+        self._key_words = add_key_word(self._key_words, "Festive", "wonderful")
+        self._key_words = add_key_word(self._key_words, "Festive", "heart")
+        self._key_words = add_key_word(self._key_words, "Festive", "room") # Second only
+        self._key_words = add_key_word(self._key_words, "Festive", "perfect")
+        self._key_words = add_key_word(self._key_words, "Sad", "work")
+        self._key_words = add_key_word(self._key_words, "Sad", "dirty")
+        self._key_words = add_key_word(self._key_words, "Sad", "wrong")
+        self._key_words = add_key_word(self._key_words, "Sad", "left")
+        self._key_words = add_key_word(self._key_words, "Sad", "sad")
+        self._key_words = add_key_word(self._key_words, "Horse", "rode")
+        self._key_words = add_key_word(self._key_words, "Horse", "off")
 
-def add_key_word(key_words, key, word):
-    """
-    """
-    if key in key_words.keys():
-        key_words[key] = key_words.get(key).append(word)
-    else:
-        key_words[key] = [word]
+        self._sound_effect_keys = self._sound_effect_keys + ["Wind"]
+        self._music_keys = self._music_keys + ["Scary", "Festive"]
 
-    return key_words
 
 c = Cinderella()
-print(c)
+location = c.find_audio_location(c.check_for_key_word("dong"))
+c.play_audio(location, c.pick_random_audio(location))
+print("done")
