@@ -35,10 +35,7 @@ class FairytaleMenu:
 
     def ask_which_book(self):
         """
-        This function returns a string equal to the name of the chosen book
-
-        Returns:
-            A string equal to the name of the chosen book
+        This function updates the menu string to ask the user to select a book
         """
 
         self.menu = "Select a book - type the number of the book and press enter \n 1. Cinderella \n 2. The 3 Little Pigs"
