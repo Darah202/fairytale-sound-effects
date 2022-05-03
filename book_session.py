@@ -12,6 +12,9 @@ class BookSession():
     def __init__(self):
         """
         """
+        pygame.init()
+        pygame.mixer.init()
+
         self._key_words = {"Beginning": ["once upon a time", \
             "happily ever after"], "Huff": ["huff"], \
             "Fire": ["fire"], "Footsteps": ["running", "ran", "walk", "walking"\
@@ -49,18 +52,14 @@ class BookSession():
     def pick_random_audio(self, location):
         """
         """
-        return random.choice(os.listdir(f"Audio/Sound_Effects/Footsteps"))
-        #{location[0]}/{location[1]}/
+        return random.choice(os.listdir(f"Audio/{location[0]}/{location[1]}/"))
 
-    def play_audio(self, location, audio_name):
+    def play_audio(self, location, file_name):
         """
         """
-        pygame.init()
-        pygame.mixer.init()
         file_name = self.pick_random_audio(location)
-        sounda = pygame.mixer.Sound(f"Audio/Sound_Effects/Footsteps")
-       #{location[0]}/{location[1]}/{file_name}
-        sounda.play()
+        pygame.mixer.music.load(f"Audio/{location[0]}/{location[1]}/{file_name}")
+        pygame.mixer.music.play()
         time.sleep(8)
 
     def __repr__(self):
