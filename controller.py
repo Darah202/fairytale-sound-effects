@@ -1,6 +1,7 @@
 import pygame
 import time
 
+###### Unnecessary code ######################################################
 pygame.init()
 pygame.mixer.init()
 sounda = pygame.mixer.Sound("Audio/Sound_Effects/Footsteps/footsteps_2.wav")

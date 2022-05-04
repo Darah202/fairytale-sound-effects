@@ -33,8 +33,7 @@ class BookSession():
             for word in value: 
                 if word in transcribed_text:
                     return key
-        
-        return ""
+        return None
 
     def find_audio_location(self, key):
         """
@@ -58,22 +57,21 @@ class BookSession():
         """
         """
         file_name = self.pick_random_audio(location)
-        pygame.mixer.music.load(f"Audio/{location[0]}/{location[1]}/{file_name}")
+        pygame.mixer.music.load(f"Audio/{location[0]}/{location[1]}/" +\
+            "{file_name}")
         pygame.mixer.music.play()
-        time.sleep(8)
+        time.sleep(6)
 
-    def __repr__(self):
+    def add_key_word(self, key_words_dict, key_to_word_list):
         """
         """
-        return str(self._key_words)
+        for key_and_word_group in key_to_word_list:
+            key = key_and_word_group[0]
+            word = key_and_word_group[1]
 
+            if key in key_words_dict.keys():
+                key_words_dict.get(key).append(word)
+            else:
+                key_words_dict[key] = [word]
 
-def add_key_word(key_words, key, word):
-    """
-    """
-    if key in key_words.keys():
-        key_words.get(key).append(word)
-    else:
-        key_words[key] = [word]
-
-    return key_words
+        return key_words_dict
