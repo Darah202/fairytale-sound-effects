@@ -112,6 +112,7 @@ class BookSession():
         A string representing the name of a random file inside the path
         specified.
         """
+
         all_files = os.listdir(f"Audio/{self._location[0]}/" +
             f"{self._location[1]}/")
         return random.choice(all_files)
@@ -126,7 +127,7 @@ class BookSession():
         """
         # Load random file from location.
         location = self._location
-        file_name = self.pick_random_audio(location)
+        file_name = self.pick_random_audio()
 
         # Play the file for up to 6 seconds.
         pygame.mixer.music.load(f"Audio/{location[0]}/" +

@@ -38,8 +38,8 @@ class SoundEffectsController():
         """
         """
         location = self._session.find_audio_location(key_word)
-        audio = self._session.pick_random_audio(location)
-        self._session.play_audio(location, audio)
+        audio = self._session.pick_random_audio()
+        self._session.play_audio()
 
     def combine_listening(self):
         """
