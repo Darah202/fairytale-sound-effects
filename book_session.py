@@ -14,9 +14,9 @@ class BookSession():
     audio.
 
     Attributes:
-        _key_words: A dictionary mapping each audio cue to a general category of
-            sound effects or music. Here, the keys are strings and the values
-            are lists of strings.
+        _key_words: A dictionary mapping lists of audio cue to general category 
+            names. Here, the keys are strings and the values are lists of
+            strings.
         _sound_effect_keys: A list of strings representing all the category
             names for sound effect related cues.
         _music_keys: A list of strings representing all the category names for
@@ -117,7 +117,11 @@ class BookSession():
 
     def play_audio(self, location):
         """
+        Select and play the audio for a random file in the location specified
+        through the input
 
+        Pick a random file using the function 'pick_random_audio' and through
+        pygame's mixer, load and play the file for up to 6 seconds.
 
         Args:
             location: A list containing two strings representing the beginning
@@ -126,7 +130,10 @@ class BookSession():
                 "Sound_Effects" or "Music", while the second string represents
                 the more narrow category name, such as "Clock" or "Fire". 
         """
+        # Load random file from location.
         file_name = self.pick_random_audio(location)
+
+        # Play the file for up to 6 seconds.
         pygame.mixer.music.load(f"Audio/{location[0]}/{location[1]}/" +
             f"{file_name}")
         pygame.mixer.music.play()
@@ -134,13 +141,40 @@ class BookSession():
 
     def add_key_word(self, key_words_dict, key_to_word_list):
         """
+        Given a pre-existing dictionary of keys mapping to lists, from a list
+        of lists, map the second string to the first one.
+
+        For example:
+        Given a dictionary:
+            {"Greetings": ["Hello", "Hola"], "Goodbyes": ["Bye", "Adios"]}
+        and a list of lists:
+            [["Greetings", "Annyeong"], ["Questions", "How are you"]]
+        map the second string to the first one:
+            {"Greetings": ["Hello", "Hola", "Annyeong],
+             "Goodbyes": ["Bye", "Adios"],
+             "Questions": ["How are you"]}
+
+        Args:
+            key_words_dict: A dictionary mapping lists of audio cue to general
+                category names. Here, the keys are strings and the values are
+                lists of strings.
+            key_to_word_list: A list of lists of length two containing strings
+                where the first string is the name of the category (the key) 
+                and the second is the audio cue to add to that category (the
+                value).
+
+        Returns:
+        The same dictionary with the new audio cues and categories added to it.
         """
         for key_and_word_group in key_to_word_list:
             key = key_and_word_group[0]
             word = key_and_word_group[1]
 
+            # Add to the current list under the key if the key exists.
             if key in key_words_dict.keys():
                 key_words_dict.get(key).append(word)
+
+            # Create a new list under the new key if the key does not exist.
             else:
                 key_words_dict[key] = [word]
 
