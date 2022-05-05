@@ -23,10 +23,7 @@ def main():
     which_book = menu.ask_which_book()
 
     book_chosen = menu.book_choice(which_book[1])
-    if book_chosen == "Cinderella":
-        sound_effects = SoundEffectsController(Cinderella)
-    if book_chosen == "The 3 Little Pigs":
-        sound_effects = SoundEffectsController(ThreeLittlePigs)
+    sound_effects = SoundEffectsController(book_chosen)
 
     sound_effects.combine_listening()
 

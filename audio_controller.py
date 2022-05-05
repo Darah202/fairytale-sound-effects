@@ -3,7 +3,9 @@ File to integrate mic input to text and playing of audio files.
 """
 import pygame
 import time
+import book_session as bs
 import cinderella as cd
+import three_little_pigs as tlp
 import listener as ls
 
 class SoundEffectsController():
@@ -12,14 +14,26 @@ class SoundEffectsController():
 
     Attributes:
         _listener: An instance of Listener.
-        _session: An instance of the BookSession chosen by the user.
+        _session_name: An string representing the name of the BookSession chosen
+            by the user.
+        _session: An instance of BookSession or a subclass of BookSession that
+            was chosen by the user.
     """
     def __init__(self, book_session_chosen):
         """
-
+        Intialize the Controller with a Listener to manage mic input and a
+        BookSession containing the audio cues. If the inputted name for the book
+        is one that already has special cues mapped to it (ex: Cinderella),
+        an instance of that subclass is made instead.
         """
         self._listener = ls.Listener()
-        self._session = book_session_chosen
+        self._session_name = book_session_chosen
+        self._session = bs.BookSession()
+
+        if self._session_name == "Cinderella":
+            self._session = cd.Cinderella
+        if self._session_name == "The 3 Little Pigs":
+            self._session = tlp.ThreeLittlePigs
 
     def listen_for_key_word(self):
         """
