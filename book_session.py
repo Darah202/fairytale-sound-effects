@@ -10,11 +10,11 @@ import listener as ls
 
 class BookSession():
     """
-    Audio cues for storybooks in general and basic functionality to play the 
+    Audio cues for storybooks in general and basic functionality to play the
     audio.
 
     Attributes:
-        _key_words: A dictionary mapping lists of audio cue to general category 
+        _key_words: A dictionary mapping lists of audio cue to general category
             names. Here, the keys are strings and the values are lists of
             strings.
         _sound_effect_keys: A list of strings representing all the category
@@ -44,7 +44,7 @@ class BookSession():
     def check_for_key_word(self, transcribed_text):
         """
         Given a string of text, check for any of the audio cues and returns
-        which one is present. 
+        which one is present.
 
         If there is more than one cue present in the text, only the first one's
         category (key) will be returned.
@@ -59,7 +59,7 @@ class BookSession():
         there are no cues present.
         """
         for key, value in self._key_words.items():
-            for word in value: 
+            for word in value:
                 if word in transcribed_text:
                     return key
         return None
