@@ -42,7 +42,7 @@ class Listener():
             print("Start reading!  When you finish the story, say \"The end!\"")
             with self._mic as source:
                 self._recognizer.adjust_for_ambient_noise(source)
-                audio = self._recognizer.listen(source, timeout=15)
+                audio = self._recognizer.listen(source, timeout=10)
 
             # Invokes Google Web Speech API & outputs text
             print("Here's what you said: ")
