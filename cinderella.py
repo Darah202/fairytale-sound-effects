@@ -6,10 +6,10 @@ from book_session import BookSession
 class Cinderella(BookSession):
     """
     """
-    def __init__(self, listener):
+    def __init__(self):
         """
         """
-        super(Cinderella, self).__init__(listener)
+        super(Cinderella, self).__init__()
 
         # Add specific words to the keys for each music group
         _new_keywords = [["Beginning", "poof"], ["Beginning", "grant"], \
@@ -26,6 +26,3 @@ class Cinderella(BookSession):
         self._key_words = self.add_key_word(self._key_words, _new_keywords)
         self._sound_effect_keys = self._sound_effect_keys + ["Wind"]
         self._music_keys = self._music_keys + ["Scary", "Festive"]
-
-
-c = Cinderella()

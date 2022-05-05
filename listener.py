@@ -5,7 +5,7 @@ Transcribing speech from microphone input
 import speech_recognition as sr
 import pyaudio
 
-class Listener:
+class Listener():
     """
     This class is used to record audio data and transcribe the spoken words to
     text
@@ -56,6 +56,3 @@ class Listener:
             print(text_output.lower())
 
         return text_output
-
-get_audio = Listener()
-get_audio.listening()
