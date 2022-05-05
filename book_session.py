@@ -21,6 +21,11 @@ class BookSession():
             names for sound effect related cues.
         _music_keys: A list of strings representing all the category names for
             background music related cues.
+        _location: A list containing two strings representing the path
+            containing the files from which one is to be randomly returned.
+            Here, the first string represents the directory "Sound_Effects"
+            or "Music", while the second string represents the more narrow
+            category name, such as "Clock" or "Fire".
     """
 
     def __init__(self):
@@ -40,6 +45,7 @@ class BookSession():
         self._sound_effect_keys = ["Huff", "Fire", "Footsteps", "Laughter", \
             "Horse", "Clock", "Knock"]
         self._music_keys = ["Beginning", "Sad"]
+        self._location = []
 
     def check_for_key_word(self, transcribed_text):
         """
@@ -67,7 +73,7 @@ class BookSession():
     def find_audio_location(self, key):
         """
         Inside of the directory 'Audio', find the location of the category (key)
-        entered. 
+        entered.
 
         Current setup of files separates them into directories labeled 'Sound
         Effects' and 'Music', and further into directories for each narrower
@@ -86,56 +92,45 @@ class BookSession():
         the audio files for the category (key) inputted exist.
         """
         location = []
-    
+
         # Pick whether the folder is Sound_Effects or Music.
         if key in self._sound_effect_keys:
             location = location + ["Sound_Effects"]
         else:
             location = location + ["Music"]
-        
+
         # Pick the nested folder
         location = location + [key]
 
-        return location
+        self._location = location
 
-    def pick_random_audio(self, location):
+    def pick_random_audio(self):
         """
-        Return a random file from the folder given through the input 'location'.
-
-        Args:
-            location: A list containing two strings representing the path
-                containing the files from which one is to be randomly returned.
-                Here, the first string represents the directory "Sound_Effects"
-                or "Music", while the second string represents the more narrow
-                category name, such as "Clock" or "Fire". 
+        Return a random file from the folder given through the '_location'.
 
         Returns:
         A string representing the name of a random file inside the path
         specified.
         """
-        return random.choice(os.listdir(f"Audio/{location[0]}/{location[1]}/"))
+        all_files = os.listdir(f"Audio/{self._location[0]}/" +
+            f"{self._location[1]}/")
+        return random.choice(all_files)
 
-    def play_audio(self, location):
+    def play_audio(self):
         """
         Select and play the audio for a random file in the location specified
         through the input
 
         Pick a random file using the function 'pick_random_audio' and through
         pygame's mixer, load and play the file for up to 6 seconds.
-
-        Args:
-            location: A list containing two strings representing the beginning
-                part of the path containing the single file that is to be
-                played. Here, the first string represents the directory
-                "Sound_Effects" or "Music", while the second string represents
-                the more narrow category name, such as "Clock" or "Fire". 
         """
         # Load random file from location.
+        location = self._location
         file_name = self.pick_random_audio(location)
 
         # Play the file for up to 6 seconds.
-        pygame.mixer.music.load(f"Audio/{location[0]}/{location[1]}/" +
-            f"{file_name}")
+        pygame.mixer.music.load(f"Audio/{location[0]}/" +
+            f"{location[1]}/{file_name}")
         pygame.mixer.music.play()
         time.sleep(6)
 
@@ -159,7 +154,7 @@ class BookSession():
                 category names. Here, the keys are strings and the values are
                 lists of strings.
             key_to_word_list: A list of lists of length two containing strings
-                where the first string is the name of the category (the key) 
+                where the first string is the name of the category (the key)
                 and the second is the audio cue to add to that category (the
                 value).
 
