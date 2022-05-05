@@ -22,6 +22,7 @@ def main():
     view_menu.draw()
 
     which_book = menu.ask_which_book()
+    print(type(which_book))
 
     menu.book_choice(which_book[1])
 
