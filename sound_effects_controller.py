@@ -21,15 +21,18 @@ class SoundEffectsController():
         text_and_key_word = [""]
 
         # Keep listening until a keyword is said
-        while (key_word_found != None) and (len(key_word_found) < 1):
+        while True:
             text = self._listener.listening()
             text_and_key_word[0] = text
 
             if "the end" in text:
                 text_and_key_word[0] = "the end"
                 key_word_found = "the end"
+                break
             else:
-                key_word_found = str(self._session.check_for_key_word(text))
+                key_word_found = self._session.check_for_key_word(text)
+                if key_word_found != None:
+                    break
 
         text_and_key_word.append(key_word_found)
         return text_and_key_word
