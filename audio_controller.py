@@ -30,6 +30,8 @@ class AudioController():
         self._session_name = book_session_chosen
         self._session = bs.BookSession()
 
+        # If a book already defined is entered, start a session specific to it.
+        # Else, continue with the basic BookSession class.
         if self._session_name == "Cinderella":
             self._session = cd.Cinderella()
         if self._session_name == "The 3 Little Pigs":
@@ -37,19 +39,31 @@ class AudioController():
 
     def listen_for_key_word(self):
         """
+        Listen until a key word or "the end" is spoken into the microphone.
+
+        If "the end" is present in the text, then "the end" is added as
+        both the text and the key in the list returned.
+
+        Returns:
+        A list of strings where the first string represents the text spoken
+        that contains the category (key) for the audio cue detected and the
+        second string represents the key word. 
         """
         key_word_found = ""
         text_and_key_word = [""]
 
-        # Keep listening until a keyword is said
+        # Keep listening until a keyword is detected.
         while True:
             text = self._listener.listening()
             text_and_key_word[0] = text
 
+            # Stop listening if "the end" is said.
             if "the end" in text:
                 text_and_key_word[0] = "the end"
                 key_word_found = "the end"
                 break
+
+            # Stop listening if a key word is found.
             else:
                 key_word_found = self._session.check_for_key_word(text)
                 if key_word_found != None:
@@ -60,7 +74,12 @@ class AudioController():
     
     def find_and_play_key_word(self, key_word):
         """
+        Play a random audio file from the folder containing the files for the
+        category inputted (key word).
+
         Args:
+            key_word: A string representing the category (key word) to play the
+                audio for.
         """
         print(f"key_word:  {key_word}")
         location = self._session.find_audio_location(key_word)
@@ -70,11 +89,13 @@ class AudioController():
         self._session.play_audio()
 
     def combine_listening(self):
-
+        """
+        Integrate functions in AudioController together by continuing to listen
+        and play audio files until "the end" is said.
+        """
         while True:
             text_and_key_word = self.listen_for_key_word()
-            print(text_and_key_word)
-            
+
             if text_and_key_word[0] == "the end":
                 break
 
