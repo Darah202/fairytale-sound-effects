@@ -101,6 +101,8 @@ class BookSession():
 
         # Pick the nested folder
         location = location + [key]
+        print(f"final location:  {location}")
+
 
         self._location = location
 

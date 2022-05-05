@@ -30,9 +30,12 @@ class SoundEffectsController():
         """
         Args:
         """
+        print(f"key_word:  {key_word}")
         location = self._session.find_audio_location(key_word)
-        audio = self._session.pick_random_audio(location)
-        self._session.play_audio(location, audio)
+        print(f"location:  {location}")
+        audio = self._session.pick_random_audio()
+        print(f"audio:  {audio}")
+        self._session.play_audio()
 
     def combine_listening(self):
 
@@ -40,5 +43,5 @@ class SoundEffectsController():
             key_word = self.listen_for_key_word()
             self.find_and_play_key_word(key_word[1])
 
-            if "the end" in self.listen_for_key_word[0]:
+            if "the end" in key_word[0]:
                 break
