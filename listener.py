@@ -1,5 +1,5 @@
 """
-Transcribe speech from microphone input
+Transcribe speech from microphone input.
 """
 
 import speech_recognition as sr
@@ -7,7 +7,7 @@ import pyaudio
 
 class Listener():
     """
-    Class to record audio data and transcribe the spoken words to text
+    Class to record audio data and transcribe the spoken words to text.
 
     Attributes:
         _recognizer: A 'speech_recognition.Recognizer' instance which is used
@@ -18,7 +18,7 @@ class Listener():
 
     def __init__(self):
         """
-        Initialize the Listener with a Recognizer and Microphone
+        Initialize the Listener with a Recognizer and Microphone.
         """
         # Creates a recognizer instance
         self._recognizer = sr.Recognizer()
