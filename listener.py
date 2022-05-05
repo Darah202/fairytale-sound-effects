@@ -1,5 +1,5 @@
 """
-Transcribing speech from microphone input
+Transcribe speech from microphone input
 """
 
 import speech_recognition as sr
@@ -7,19 +7,19 @@ import pyaudio
 
 class Listener():
     """
-    This class is used to record audio data and transcribe the spoken words to
-    text
+    Class to record audio data and transcribe the spoken words to text
 
     Attributes:
-        _recognizer:  A 'speech_recognition.Recognizer' instance which is used
-        to recognize speech
+        _recognizer: A 'speech_recognition.Recognizer' instance which is used
+            to recognize speech.
+        _mic: A 'speech_recognition.Microphone' instance which is used to
+            record speech through the microphone of the device.
     """
 
     def __init__(self):
         """
-        This method creates a recognizer instance
+        Initialize the Listener with a Recognizer and Microphone
         """
-
         # Creates a recognizer instance
         self._recognizer = sr.Recognizer()
         
@@ -29,14 +29,14 @@ class Listener():
 
     def listening(self):
         """
-        This method records 3 seconds of audio and transcribes it to text.
+        Record 3 seconds of audio and transcribe to text.
 
-        returns:
-        text_output:  A string containing the words detected in the 3 seconds
-        of recorded audio data.
+        Use microphone to record input for 3 seocnds and transcribe it to words.
 
+        Returns:
+        A string containing the words detected in the 3 seconds of recorded
+        audio data.
         """
-
         try:
             # Record Data from Microphone input for 3 seconds
             print("Start reading!  When you finish the story, say \"The end!\"")
