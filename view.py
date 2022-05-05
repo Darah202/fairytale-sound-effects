@@ -24,13 +24,13 @@ class MenuView(ABC):
         Return the FairytaleMenu instance being represented by this view.
         """
         return self._menu
-    
+
     @abstractmethod
     def draw(self):
         """
         Display a representation of the current state of the menu.
         """
-        pass
+
 
 class TextView(MenuView):
     """

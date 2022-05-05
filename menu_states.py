@@ -3,7 +3,7 @@ Contains class to create a text-based menu for the reading session.
 """
 class FairytaleMenu:
     """
-    Create and track information for a menu for the fairy tale session. 
+    Create and track information for a menu for the fairy tale session.
 
     Attributes:
         _menu: A string representing the input from the user.
@@ -45,7 +45,7 @@ class FairytaleMenu:
         self._menu = f"Great choice!  You are reading {book_title}.  Begin \
             reading out loud now."
         print(self._menu)
-        
+
     def __repr__(self):
         """
         Return a string that represents the menu with the appropriate spaces

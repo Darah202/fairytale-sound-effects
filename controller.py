@@ -1,5 +1,5 @@
 """
-Tic-tac-toe controller.
+Book Session controller.
 """
 from abc import ABC, abstractmethod
 
@@ -35,7 +35,6 @@ class ControlSoundEffects(ABC):
         """
         Make a valid move in the current board.
         """
-        pass
 
 
 class Controller(ControlSoundEffects):

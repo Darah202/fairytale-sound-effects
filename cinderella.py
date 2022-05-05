@@ -33,7 +33,7 @@ class Cinderella(BookSession):
         'BookSession' and then adding the new audio cues specific to this book.
         """
         # Initialize with variables from BookSession
-        super(Cinderella, self).__init__()
+        super().__init__()
 
         # Add specific words to the keys for each music group
         self._new_keywords = [["Beginning", "poof"], ["Beginning", "grant"], \
