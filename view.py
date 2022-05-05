@@ -4,7 +4,7 @@ View and interact with a text based menu
 
 from abc import ABC, abstractmethod
 
-class MenuView:
+class MenuView(ABC):
     """
     Abstract base class representing a view menu for the fairytale sound effect
     player.

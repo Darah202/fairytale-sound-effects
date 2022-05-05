@@ -4,7 +4,7 @@ Main program to set up and run the fairytale sound effect player.
 
 from menu_states import FairytaleMenu
 from view import TextView
-#from controller import TextController
+from controller import Controller
 
 
 def main():
@@ -16,10 +16,15 @@ def main():
     """
 
     menu = FairytaleMenu()
-    view_board = TextView(menu)
-    #controller = TextController(menu)
+    view_menu = TextView(menu)
+    controller = Controller(menu)
 
-    view_board.draw()
+    view_menu.draw()
+
+    which_book = menu.ask_which_book()
+
+    menu.book_choice(which_book[1])
+
 
 if __name__ == "__main__":
     main()
