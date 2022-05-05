@@ -27,7 +27,6 @@ class BookSession():
             or "Music", while the second string represents the more narrow
             category name, such as "Clock" or "Fire".
     """
-
     def __init__(self):
         """
         Initialize the session by initializing pygame's music and adding basic
@@ -38,7 +37,7 @@ class BookSession():
         pygame.mixer.init()
 
         self._key_words = {"Beginning": ["once upon a time", \
-            "happily ever after"], "Huff": ["huff"], \
+            "happily ever after"], "Huff": ["huff, hoff"], \
             "Fire": ["fire"], "Footsteps": ["running", "ran", "walk", "walking"\
             ], "Laughter": ["laugh"], "Sad": ["sad"], "Horse": ["horse"], \
             "Clock": ["dong"], "Knock": ["knock", "knocked"]}

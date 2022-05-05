@@ -1,4 +1,5 @@
 """
+File to integrate mic input to text and playing of audio files.
 """
 import pygame
 import time
@@ -7,12 +8,18 @@ import listener as ls
 
 class SoundEffectsController():
     """
+    A controller for the audio input and playing.
+
+    Attributes:
+        _listener: An instance of Listener.
+        _session: An instance of the BookSession chosen by the user.
     """
-    def __init__(self):
+    def __init__(self, book_session_chosen):
         """
+
         """
         self._listener = ls.Listener()
-        self._session = cd.Cinderella()
+        self._session = book_session_chosen
 
     def listen_for_key_word(self):
         """

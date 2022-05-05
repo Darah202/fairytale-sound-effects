@@ -3,7 +3,6 @@ Contains subclass of BookSession specifically for the story Cinderella
 """
 from book_session import BookSession
 
-
 class Cinderella(BookSession):
     """
     A Cinderella version of BookSession that adds more audio cues specific

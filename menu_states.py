@@ -37,14 +37,20 @@ class FairytaleMenu:
 
     def book_choice(self, book_title):
         """
-        Print a string telling the user the name of their chosen book.
+        Print a string telling the user the name of their chosen book and return
+        the name of the book.
 
         Args:
             book_title: A string representing the name of the chosen book
+
+        Returns:
+        A string representing the title of the book chosen by the user.
         """
         self._menu = f"Great choice!  You are reading {book_title}.  Begin " +\
             "reading out loud now."
         print(self._menu)
+
+        return book_title
 
     def __repr__(self):
         """
