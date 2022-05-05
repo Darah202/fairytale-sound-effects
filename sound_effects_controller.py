@@ -48,8 +48,3 @@ class SoundEffectsController():
             text_and_key_word = self.listen_for_key_word()
             print(text_and_key_word)
             self.find_and_play_key_word(text_and_key_word[1])
-
-            
-
-sc = SoundEffectsController()
-sc.combine_listening()
