@@ -8,7 +8,7 @@ import cinderella as cd
 import three_little_pigs as tlp
 import listener as ls
 
-class SoundEffectsController():
+class AudioController():
     """
     A controller for the audio input and playing.
 
@@ -31,9 +31,9 @@ class SoundEffectsController():
         self._session = bs.BookSession()
 
         if self._session_name == "Cinderella":
-            self._session = cd.Cinderella
+            self._session = cd.Cinderella()
         if self._session_name == "The 3 Little Pigs":
-            self._session = tlp.ThreeLittlePigs
+            self._session = tlp.ThreeLittlePigs()
 
     def listen_for_key_word(self):
         """
