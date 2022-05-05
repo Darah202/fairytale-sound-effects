@@ -36,6 +36,7 @@ class SoundEffectsController():
     
     def find_and_play_key_word(self, key_word):
         """
+        Args:
         """
         location = self._session.find_audio_location(key_word)
         audio = self._session.pick_random_audio()
