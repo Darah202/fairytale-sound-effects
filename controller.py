@@ -1,43 +1,63 @@
 """
+Tic-tac-toe controller.
 """
-import pygame
-import time
-import cinderella as cd
-import listener as ls
+from abc import ABC, abstractmethod
 
-class Controller():
+
+class ControlGame(ABC):
     """
+    Abstract base class representing a controller for a tic-tac-toe game.
+
+    Attributes:
+        _board: A TicTacToeBoard instance representing the tic-tac-toe game to
+            send moves to.
     """
-    def __init__():
-        """
-        """
-        _listener = ls.Listener()
-        _session = cd.Cinderella()
 
-    def listen_for_key_word(self):
+    def __init__(self, sound_effects):
         """
+        Create a new controller for a tic-tac-toe game.
+
+        Args:
+            board: A TicTacToeBoard instance representing the tic-tac-toe game
+                to send moves to.
         """
-        key_word_found = ""
+        self._sound_effects = sound_effects
 
-        # Keep listening until a keyword is said
-        while (len(key_word_found) < 1):
-            text_heard = self._listener.listening()
-            key_word_found = self._session.check_for_key_word(text_heard)
-
-        return text_heard, key_word_found
-    
-    def find_and_play_key_word(self, key_word):
+    @property
+    def board(self):
         """
+        Return the TicTacToeBoard instance this controller interacts with.
         """
-        location = self._session.find_audio_location(key_word)
-        audio = self._session.pick_random_audio(location)
-        self._session.play_audio(location, audio)
+        return self._board
 
-    def end_listening(self):
+    @abstractmethod
+    def move(self):
+        """
+        Make a valid move in the current board.
+        """
+        pass
 
-        while True:
-            key_word = self.listen_for_key_word()
-            self.find_and_play_key_word(key_word[1])
 
-            if "the end" in self.listen_for_key_word[0]:
-                break
+class TextController(TicTacToeController):
+    """
+    Text-based controller for tic-tac-toe that takes user input representing
+    board coordinates.
+    """
+
+    def move(self):
+        """
+        Obtain text input from the user to make a move in the current board,
+        repeating the process until a valid move is made.
+        """
+        move = input("Input row/column numbers for your move, separated by a"
+                     " space (e.g., \"0 0\"): ")
+        try:
+            numbers = move.strip().split()
+            row = int(numbers[0])
+            col = int(numbers[1])
+            if row < 0 or col < 0:
+                raise ValueError
+            self._board.mark(row, col)
+        except (IndexError, ValueError):
+            print(f"Error with input '{move}'. Please try again.")
+            self.move()

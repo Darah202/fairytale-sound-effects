@@ -53,7 +53,8 @@ class FairytaleMenu:
         """
 
         self.menu = f"Great choice!  You are reading {book_title}.  Begin reading out loud now."
-
+        print(self.menu)
+        
         return str(self.menu)
 
     def __repr__(self):
