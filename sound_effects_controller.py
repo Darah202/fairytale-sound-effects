@@ -5,10 +5,10 @@ import time
 import cinderella as cd
 import listener as ls
 
-class GameController():
+class SoundEffectsController():
     """
     """
-    def __init__():
+    def __init__(self):
         """
         """
         _listener = ls.Listener()
