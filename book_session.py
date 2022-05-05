@@ -117,8 +117,8 @@ class BookSession():
 
         all_files = os.listdir(f"Audio/{self._location[0]}/" +
             f"{self._location[1]}/")
-        print(f"all_files:  {all_files}")
-        all_files.remove(".DS_Store")
+        if ".DS_Store" in all_files:
+            all_files.remove(".DS_Store")
         print(f"all_files:  {all_files}")
         return random.choice(all_files)
 
