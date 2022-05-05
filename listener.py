@@ -40,10 +40,10 @@ class Listener():
 
         try:
             # Record Data from Microphone input for 3 seconds
-            print("Start reading!")
+            print("Start reading!  When you finish the story, say \"The end!\"")
             with self._mic as source:
                 self._recognizer.adjust_for_ambient_noise(source)
-                audio = self._recognizer.listen(source)
+                audio = self._recognizer.listen(source, duration=8)
 
             # Invokes Google Web Speech API & outputs text
             print("Here's what you said: ")

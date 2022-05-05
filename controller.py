@@ -24,18 +24,20 @@ class Controller():
             text_heard = self._listener.listening()
             key_word_found = self._session.check_for_key_word(text_heard)
 
-        return key_word_found
+        return text_heard, key_word_found
     
-    def find_and_play_key_words(self):
+    def find_and_play_key_word(self, key_word):
         """
         """
-        key_word = self.listen_for_key_word()
-        if (len(key_word) > 1):
-            location = self._session.find_audio_location(key_word)
-            audio = self._session.pick_random_audio(location)
-            self._session.play_audio(location, audio)
-        
-        
+        location = self._session.find_audio_location(key_word)
+        audio = self._session.pick_random_audio(location)
+        self._session.play_audio(location, audio)
 
-        
+    def end_listening(self):
 
+        while True:
+            key_word = self.listen_for_key_word()
+            self.find_and_play_key_word(key_word[1])
+
+            if "the end" in self.listen_for_key_word[0]:
+                break
