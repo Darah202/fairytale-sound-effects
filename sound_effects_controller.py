@@ -11,8 +11,8 @@ class SoundEffectsController():
     def __init__(self):
         """
         """
-        _listener = ls.Listener()
-        _session = cd.Cinderella()
+        self._listener = ls.Listener()
+        self._session = cd.Cinderella()
 
     def listen_for_key_word(self):
         """
@@ -22,7 +22,7 @@ class SoundEffectsController():
         # Keep listening until a keyword is said
         while (len(key_word_found) < 1):
             text_heard = self._listener.listening()
-            key_word_found = self._session.check_for_key_word(text_heard)
+            key_word_found = str(self._session.check_for_key_word(text_heard))
 
         return text_heard, key_word_found
     

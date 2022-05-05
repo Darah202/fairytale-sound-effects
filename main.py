@@ -26,7 +26,8 @@ def main():
     menu.book_choice(which_book[1])
 
     sound_effects = SoundEffectsController()
-    #controller = Controller(sound_effects)
+    controller = Controller(sound_effects)
+    sound_effects.combine_listening()
 
 
 if __name__ == "__main__":
