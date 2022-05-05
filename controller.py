@@ -4,7 +4,7 @@ Tic-tac-toe controller.
 from abc import ABC, abstractmethod
 
 
-class ControlGame(ABC):
+class ControlSoundEffects(ABC):
     """
     Abstract base class representing a controller for a tic-tac-toe game.
 
@@ -24,40 +24,29 @@ class ControlGame(ABC):
         self._sound_effects = sound_effects
 
     @property
-    def board(self):
+    def sound_effects(self):
         """
         Return the TicTacToeBoard instance this controller interacts with.
         """
-        return self._board
+        return self._sound_effects
 
     @abstractmethod
-    def move(self):
+    def play(self):
         """
         Make a valid move in the current board.
         """
         pass
 
 
-class TextController(TicTacToeController):
+class Controller(ControlSoundEffects):
     """
     Text-based controller for tic-tac-toe that takes user input representing
     board coordinates.
     """
 
-    def move(self):
+    def play(self):
         """
         Obtain text input from the user to make a move in the current board,
         repeating the process until a valid move is made.
         """
-        move = input("Input row/column numbers for your move, separated by a"
-                     " space (e.g., \"0 0\"): ")
-        try:
-            numbers = move.strip().split()
-            row = int(numbers[0])
-            col = int(numbers[1])
-            if row < 0 or col < 0:
-                raise ValueError
-            self._board.mark(row, col)
-        except (IndexError, ValueError):
-            print(f"Error with input '{move}'. Please try again.")
-            self.move()
+        self._sound_effects

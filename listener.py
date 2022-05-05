@@ -24,7 +24,6 @@ class Listener():
         self._recognizer = sr.Recognizer()
         
         # Use default system microphone as source
-        print("use default microphone as source:")
         self._mic = sr.Microphone()
 
 
@@ -43,7 +42,7 @@ class Listener():
             print("Start reading!  When you finish the story, say \"The end!\"")
             with self._mic as source:
                 self._recognizer.adjust_for_ambient_noise(source)
-                audio = self._recognizer.listen(source, duration=8)
+                audio = self._recognizer.listen(source)
 
             # Invokes Google Web Speech API & outputs text
             print("Here's what you said: ")
