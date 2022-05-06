@@ -30,8 +30,8 @@ class AudioController():
         self._session_name = book_session_chosen
         self._session = bs.BookSession()
 
-        # If a book already defined is entered, start a session specific to it.
-        # Else, continue with the basic BookSession class.
+        # If a book already defined is entered, start a session specific to it
+        # Else, continue with the basic BookSession class
         if self._session_name == "Cinderella":
             self._session = cd.Cinderella()
         if self._session_name == "The 3 Little Pigs":
@@ -52,18 +52,18 @@ class AudioController():
         key_word_found = ""
         text_and_key_word = [""]
 
-        # Keep listening until a keyword is detected.
+        # Keep listening until a keyword is detected
         while True:
             text = self._listener.listening()
             text_and_key_word[0] = text
 
-            # Stop listening if "the end" is said.
+            # Stop listening if "the end" is said
             if "the end" in text:
                 text_and_key_word[0] = "the end"
                 key_word_found = "the end"
                 break
 
-            # Stop listening if a key word is found.
+            # Stop listening if a key word is found
             else:
                 key_word_found = self._session.check_for_key_word(text)
                 if key_word_found != None:

@@ -10,7 +10,6 @@ class FairytaleMenu:
         _menu_options: A list of strings representing the different story
             options for the user to choose from.
     """
-
     def __init__(self):
         """
         Initialize Menu with the input to begin and options of books to choose
@@ -60,5 +59,4 @@ class FairytaleMenu:
         Returns:
         A string representing the menu in text format.
         """
-        #_menu_representation = f"Choose a book to read:\n {self._menu[1]}\n{self._menu[2]}"
         return str(self._menu)

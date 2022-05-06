@@ -32,7 +32,7 @@ class BookSession():
         Initialize the session by initializing pygame's music and adding basic
         audio cues to the dictionary and lists.
         """
-        # Initalize pygame and pygame's music mixer.
+        # Initalize pygame and pygame's music mixer
         pygame.init()
         pygame.mixer.init()
 
@@ -92,7 +92,7 @@ class BookSession():
         """
         location = []
 
-        # Pick whether the folder is Sound_Effects or Music.
+        # Pick whether the folder is Sound_Effects or Music
         if key in self._sound_effect_keys:
             location = location + ["Sound_Effects"]
         else:
@@ -129,11 +129,11 @@ class BookSession():
         Pick a random file using the function 'pick_random_audio' and through
         pygame's mixer, load and play the file for up to 6 seconds.
         """
-        # Load random file from location.
+        # Load random file from location
         location = self._location
         file_name = self.pick_random_audio()
 
-        # Play the file for up to 6 seconds.
+        # Play the file for up to 6 seconds
         pygame.mixer.music.load(f"Audio/{location[0]}/" +
             f"{location[1]}/{file_name}")
         pygame.mixer.music.play()
@@ -170,11 +170,11 @@ class BookSession():
             key = key_and_word_group[0]
             word = key_and_word_group[1]
 
-            # Add to the current list under the key if the key exists.
+            # Add to the current list under the key if the key exists
             if key in key_words_dict.keys():
                 key_words_dict.get(key).append(word)
 
-            # Create a new list under the new key if the key does not exist.
+            # Create a new list under the new key if the key does not exist
             else:
                 key_words_dict[key] = [word]
 

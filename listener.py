@@ -1,7 +1,6 @@
 """
 Transcribe speech from microphone input.
 """
-
 import speech_recognition as sr
 import pyaudio
 
