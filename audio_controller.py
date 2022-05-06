@@ -1,8 +1,6 @@
 """
 File to integrate mic input to text and playing of audio files.
 """
-import pygame
-import time
 import book_session as bs
 import cinderella as cd
 import three_little_pigs as tlp
@@ -47,7 +45,7 @@ class AudioController():
         Returns:
         A list of strings where the first string represents the text spoken
         that contains the category (key) for the audio cue detected and the
-        second string represents the key word. 
+        second string represents the key word.
         """
         key_word_found = ""
         text_and_key_word = [""]
@@ -64,14 +62,13 @@ class AudioController():
                 break
 
             # Stop listening if a key word is found
-            else:
-                key_word_found = self._session.check_for_key_word(text)
-                if key_word_found != None:
-                    break
+            key_word_found = self._session.check_for_key_word(text)
+            if key_word_found is not None:
+                break
 
         text_and_key_word.append(key_word_found)
         return text_and_key_word
-    
+
     def find_and_play_key_word(self, key_word):
         """
         Play a random audio file from the folder containing the files for the
@@ -82,7 +79,8 @@ class AudioController():
                 audio for.
         """
         print(f"key_word:  {key_word}")
-        location = self._session.find_audio_location(key_word)
+        self._session.find_audio_location(key_word)
+        location = self._session.get_location()
         print(f"location:  {location}")
         audio = self._session.pick_random_audio()
         print(f"audio:  {audio}")

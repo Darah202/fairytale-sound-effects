@@ -46,6 +46,6 @@ class Cinderella(BookSession):
             ["Sad", "left"], ["Sad", "sad"], ["Horse", "rode"], \
             ["Horse", "off"]]
 
-        self._key_words = self.add_key_word(self._key_words, self._new_keywords)
+        self._key_words = self.add_key_word(self._new_keywords)
         self._sound_effect_keys = self._sound_effect_keys + ["Wind"]
         self._music_keys = self._music_keys + ["Scary", "Festive"]

@@ -2,7 +2,6 @@
 Transcribe speech from microphone input.
 """
 import speech_recognition as sr
-import pyaudio
 
 class Listener():
     """
@@ -14,14 +13,13 @@ class Listener():
         _mic: A 'speech_recognition.Microphone' instance which is used to
             record speech through the microphone of the device.
     """
-
     def __init__(self):
         """
         Initialize the Listener with a Recognizer and Microphone.
         """
         # Creates a recognizer instance
         self._recognizer = sr.Recognizer()
-        
+
         # Use default system microphone as source
         self._mic = sr.Microphone()
 

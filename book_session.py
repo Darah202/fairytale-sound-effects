@@ -1,12 +1,10 @@
 """
 Parent class to create audio cues for a specific book.
 """
-import pygame
 import time
 import os
 import random
-import listener as ls
-
+import pygame
 
 class BookSession():
     """
@@ -46,6 +44,16 @@ class BookSession():
         self._music_keys = ["Beginning", "Sad"]
         self._location = []
 
+    def get_location(self):
+        """
+        Get the location for the audio file currently being discussed.
+
+        Returns:
+        A list (length 2) of strings representing the two folders inside which
+        the audio files for the category (key) inputted exist.
+        """
+        return self._location
+
     def check_for_key_word(self, transcribed_text):
         """
         Given a string of text, check for any of the audio cues and returns
@@ -82,13 +90,13 @@ class BookSession():
         'Audio/Sound_Effects/Clock'. Therefore, ["Sound_Effects", "Clock"] is
         returned.
 
+        '_location' is set to a list (length 2) of strings representing the two
+        folders inside which the audio files for the category (key) inputted
+        exist.
+
         Args:
             key: A string representing the name of the category for which the
                 location is to be found.
-
-        Returns:
-        A list (length 2) of strings representing the two folders inside which
-        the audio files for the category (key) inputted exist.
         """
         location = []
 
@@ -101,7 +109,6 @@ class BookSession():
         # Pick the nested folder
         location = location + [key]
         print(f"final location:  {location}")
-
 
         self._location = location
 
@@ -139,7 +146,7 @@ class BookSession():
         pygame.mixer.music.play()
         time.sleep(6)
 
-    def add_key_word(self, key_words_dict, key_to_word_list):
+    def add_key_word(self, key_to_word_list):
         """
         Given a pre-existing dictionary of keys mapping to lists, from a list
         of lists, map the second string to the first one.
@@ -155,27 +162,26 @@ class BookSession():
              "Questions": ["How are you"]}
 
         Args:
-            key_words_dict: A dictionary mapping lists of audio cue to general
-                category names. Here, the keys are strings and the values are
-                lists of strings.
             key_to_word_list: A list of lists of length two containing strings
                 where the first string is the name of the category (the key)
                 and the second is the audio cue to add to that category (the
                 value).
 
         Returns:
-        The same dictionary with the new audio cues and categories added to it.
+        A dictionary mapping lists of audio cue to general category names with
+        the new audio cues and categories added to it. Here, the keys are
+        strings and the values are lists of strings.
         """
         for key_and_word_group in key_to_word_list:
             key = key_and_word_group[0]
             word = key_and_word_group[1]
 
             # Add to the current list under the key if the key exists
-            if key in key_words_dict.keys():
-                key_words_dict.get(key).append(word)
+            if key in self._key_words:
+                self._key_words.get(key).append(word)
 
             # Create a new list under the new key if the key does not exist
             else:
-                key_words_dict[key] = [word]
+                self._key_words[key] = [word]
 
-        return key_words_dict
+        return self._key_words
