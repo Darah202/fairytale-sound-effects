@@ -4,8 +4,6 @@ Main program to set up and run the fairytale sound effect player.
 from menu_states import FairytaleMenu
 from audio_controller import AudioController
 from view import TextView
-from cinderella import Cinderella
-from three_little_pigs import ThreeLittlePigs
 
 def main():
     """
@@ -19,7 +17,7 @@ def main():
 
     # Ask user for book
     which_book = menu.ask_which_book()
-    book_chosen = menu.book_choice(which_book[1])
+    book_chosen = menu.book_choice(which_book[1], which_book[2])
 
     # Listen for audio cues for the book chosen
     sound_effects = AudioController(book_chosen)

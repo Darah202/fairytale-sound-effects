@@ -44,6 +44,26 @@ class BookSession():
         self._music_keys = ["Beginning", "Sad"]
         self._location = []
 
+    def get_sound_effect_keys(self):
+        """
+        Get _sound_effect_keys.
+
+        Returns:
+        A list representing _sound_effect_keys, the category names for sound
+        effect related audio cues.
+        """
+        return self._sound_effect_keys
+
+    def get_music_keys(self):
+        """
+        Get _music_keys.
+
+        Returns:
+        A list representing _music_keys, the category names for background music
+        related audio cues.
+        """
+        return self._music_keys
+
     def get_location(self):
         """
         Get the location for the audio file currently being discussed.
