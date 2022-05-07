@@ -4,8 +4,6 @@ Main program to set up and run the fairytale sound effect player.
 from menu_states import FairytaleMenu
 from audio_controller import AudioController
 from view import TextView
-from cinderella import Cinderella
-from three_little_pigs import ThreeLittlePigs
 
 def main():
     """
