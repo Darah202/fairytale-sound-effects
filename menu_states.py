@@ -1,6 +1,9 @@
 """
 Contains class to create a text-based menu for the reading session.
 """
+
+import os
+
 class FairytaleMenu:
     """
     Create and track information for a menu for the fairy tale session.
@@ -8,7 +11,7 @@ class FairytaleMenu:
     Attributes:
         _menu: A string representing the input from the user.
         _menu_options: A list of strings representing the different story
-            options for the user to choose from.
+            options for the user to choose from.    
     """
     def __init__(self):
         """
@@ -18,6 +21,7 @@ class FairytaleMenu:
         self._menu = input("Welcome to Fairytale Sound Effects!  Press enter"+\
             " to begin")
         self._menu_options = ["Cinderella", "The 3 Little Pigs"]
+        self._story_file = ["cinderella.txt", "three_little_pigs.txt"]
 
     def ask_which_book(self):
         """
@@ -31,10 +35,11 @@ class FairytaleMenu:
             " press enter \n 1. Cinderella \n 2. The 3 Little Pigs\n")
 
         book_title = self._menu_options[int(book_number)-1]
+        book_file = self._story_file[int(book_number)-1]
 
-        return str(self._menu), book_title
+        return str(self._menu), book_title, book_file
 
-    def book_choice(self, book_title):
+    def book_choice(self, book_title, book_file):
         """
         Print a string telling the user the name of their chosen book and return
         the name of the book.
@@ -47,6 +52,7 @@ class FairytaleMenu:
         """
         self._menu = f"Great choice!  You are reading {book_title}.  Begin " +\
             "reading out loud now."
+        os.system(f"gedit {book_file} &")
         print(self._menu)
 
         return book_title
