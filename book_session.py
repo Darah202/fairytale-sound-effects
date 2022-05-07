@@ -185,3 +185,10 @@ class BookSession():
                 self._key_words[key] = [word]
 
         return self._key_words
+    
+    def __repr__(self):
+        """
+        Represent the BookSession by printing the dictionary with audio cues
+        and the categories they fall into.
+        """
+        return self._key_words
