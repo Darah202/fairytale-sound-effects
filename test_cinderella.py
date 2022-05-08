@@ -32,8 +32,8 @@ def test_sound_effect_keys():
 
 def test_music_keys():
     """
-    Check that the newly defined categories related to sound effects have been
-    added to the list '_sound_effect_keys'.
+    Check that the newly defined categories related to background music have 
+    been added to the list '_music_keys'.
     """
     cind = Cinderella()
     festive = "Festive" in cind.get_music_keys()
