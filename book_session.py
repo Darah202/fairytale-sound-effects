@@ -219,6 +219,3 @@ class BookSession():
                 self._key_words[key] = [word]
 
         return self._key_words
-
-#bs = BookSession()
-#bs.play_audio()
