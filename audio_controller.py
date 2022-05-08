@@ -76,11 +76,15 @@ class AudioController():
 
         Args:
             key_word: A string representing the category (key word) to play the
-                audio for.
+                audio for. 
+        
+        Return:
+        A boolean representing whether a random audio file for the key word
+        specified was able to be played or not.
         """
         print(f"key_word:  {key_word}")
         self._session.find_audio_location(key_word)
-        self._session.play_audio()
+        return self._session.play_audio()
 
     def combine_listening(self):
         """
