@@ -171,7 +171,7 @@ class BookSession():
         pygame.mixer.music.load("Audio/Music/Scary/scary_3.wav")
 
         # Try playing the audio or else return False (exception)
-        try: 
+        try:
             pygame.mixer.music.play()
             time.sleep(6)
             return True

@@ -76,8 +76,8 @@ class AudioController():
 
         Args:
             key_word: A string representing the category (key word) to play the
-                audio for. 
-        
+                audio for.
+
         Return:
         A boolean representing whether a random audio file for the key word
         specified was able to be played or not.

@@ -1,5 +1,5 @@
 """
-Unit tests for Cinderella.
+Unit tests for The Three Little Pigs.
 """
 import pytest
 

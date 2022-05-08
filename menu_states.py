@@ -28,8 +28,8 @@ class FairytaleMenu:
         Update 'menu' to ask the user to select a book.
 
         Returns:
-        A tuple including a string representing '_menu' and a string
-        representing the name of the book.
+        A tuple including a string representing the book title and a string
+        representing the name of the text file for the book.
         """
 
         real_book = False
