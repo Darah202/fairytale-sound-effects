@@ -1,6 +1,4 @@
 TO ADD:
-Music - Festive
-Music - Scary
 Sound_Effects - Wind
 Sound_Effects - Straw
 Sound_Effects - Stick
