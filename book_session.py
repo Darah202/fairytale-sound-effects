@@ -151,10 +151,14 @@ class BookSession():
     def play_audio(self):
         """
         Select and play the audio for a random file in the location specified
-        through the input
+        by '_location'.
 
         Pick a random file using the function 'pick_random_audio' and through
         pygame's mixer, load and play the file for up to 6 seconds.
+
+        Returns:
+        A boolean representing whether a random audio file from the location
+        was able to be played or not.
         """
         # Load random file from location
         location = self._location
@@ -164,8 +168,16 @@ class BookSession():
         pygame.mixer.music.load\
             (f"Audio/{location[0]}/{location[1]}/{file_name}")
         #pygame.mixer.music.load("Audio/Sound_Effects/Laughter/laughter_4.wav")
-        pygame.mixer.music.play()
-        time.sleep(6)
+
+        # Try playing the audio or else return False (exception)
+        try: 
+            pygame.mixer.music.play()
+            time.sleep(6)
+            return True
+        except:
+            print("Couldn't play this file")
+            return False
+
 
     def add_key_word(self, key_to_word_list):
         """

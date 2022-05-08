@@ -192,6 +192,21 @@ def test_pick_random_audio(key):
     assert book_sess.pick_random_audio() in os.listdir\
         (f"Audio/{book_sess.get_location()[0]}/{book_sess.get_location()[1]}/")
 
+@pytest.mark.parametrize("key", pick_random_audio_cases)
+def test_play_audio(key):
+    """
+    Check that for the given location, a random file from the folder of audio
+    files corresponding to it's location is played through pygame.
+
+    Args:
+        key: A string representing the category name related to which the
+            audio file will be randomly played.
+    """
+    book_sess = BookSession()
+    book_sess.find_audio_location(key)
+    assert book_sess.play_audio() is True
+
+
 @pytest.mark.parametrize("key_to_word_list", add_key_word_cases)
 def test_add_key_word(key_to_word_list):
     """
