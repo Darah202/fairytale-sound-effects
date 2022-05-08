@@ -80,10 +80,6 @@ class AudioController():
         """
         print(f"key_word:  {key_word}")
         self._session.find_audio_location(key_word)
-        location = self._session.get_location()
-        print(f"location:  {location}")
-        audio = self._session.pick_random_audio()
-        print(f"audio:  {audio}")
         self._session.play_audio()
 
     def combine_listening(self):
