@@ -44,4 +44,3 @@ class ThreeLittlePigs(BookSession):
         self._sound_effect_keys = self._sound_effect_keys + ["Straw", "Stick", \
             "Brick", "Howl", "Water"]
         self._music_keys = self._music_keys + ["Happy"]
-        

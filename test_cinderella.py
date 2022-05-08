@@ -7,11 +7,16 @@ from cinderella import Cinderella
 
 # Define sets of test cases
 audio_cue_cases = [
-    # Check that the audio cues are added to the dictionary for Cinderella.
+    # Check that the audio cues are added to the dictionary for Cinderella for
+    # categories already existing
     ("turned", "Beginning"),
     ("poof", "Beginning"),
+    ("dirty", "Sad"),
+    # Check that the audio cues are added to the dictionary for Cinderella for
+    # categories not existing
     ("scream", "Scary"),
-    ("blow", "Wind")
+    ("blow", "Wind"),
+    ("bride", "Festive")
 ]
 
 # Define standard testing functions to check functions' outputs given certain
