@@ -162,13 +162,13 @@ class BookSession():
         """
         # Load random file from location
         location = self._location
-        file_name = self.pick_random_audio()
+        #file_name = self.pick_random_audio()
 
         # Play the file for up to 6 seconds
-        pygame.mixer.music.load\
-            (f"Audio/{location[0]}/{location[1]}/{file_name}")
-        print(f"File: {file_name}")
-        #pygame.mixer.music.load("Audio/Sound_Effects/Laughter/laughter_4.wav")
+        #pygame.mixer.music.load\
+        #    (f"Audio/{location[0]}/{location[1]}/{file_name}")
+        #print(f"File: {file_name}")
+        pygame.mixer.music.load("Audio/Music/Scary/scary_3.wav")
 
         # Try playing the audio or else return False (exception)
         try: 
@@ -219,3 +219,6 @@ class BookSession():
                 self._key_words[key] = [word]
 
         return self._key_words
+
+bs = BookSession()
+bs.play_audio()
