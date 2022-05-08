@@ -163,6 +163,7 @@ class BookSession():
         # Play the file for up to 6 seconds
         pygame.mixer.music.load\
             (f"Audio/{location[0]}/{location[1]}/{file_name}")
+        #pygame.mixer.music.load("Audio/Sound_Effects/Laughter/laughter_4.wav")
         pygame.mixer.music.play()
         time.sleep(6)
 
@@ -205,3 +206,6 @@ class BookSession():
                 self._key_words[key] = [word]
 
         return self._key_words
+
+#bs = BookSession()
+#bs.play_audio()

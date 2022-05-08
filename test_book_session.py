@@ -146,8 +146,6 @@ def test_get_music_keys():
     book_sess = BookSession()
     assert book_sess.get_music_keys() == ["Beginning", "Sad"]
 
-#########!!!!!!! CHECK TO WRITE TEST FOR GET LOCATION !!!!!!!!!!###############
-
 @pytest.mark.parametrize("text, key_word", check_for_key_word_cases)
 def test_check_for_key_word(text, key_word):
     """
@@ -194,8 +192,6 @@ def test_pick_random_audio(key):
     book_sess.find_audio_location(key)
     assert book_sess.pick_random_audio() in os.listdir(f"Audio/" +
         f"{book_sess.get_location()[0]}/{book_sess.get_location()[1]}/")
-
-#########!!!!!!! CHECK TO WRITE TEST FOR PLAY AUDIO !!!!!!!!!!!!###############
 
 @pytest.mark.parametrize("key_to_word_list", add_key_word_cases)
 def test_add_key_word(key_to_word_list):
