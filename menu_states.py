@@ -11,7 +11,7 @@ class FairytaleMenu:
     Attributes:
         _menu: A string representing the input from the user.
         _menu_options: A list of strings representing the different story
-            options for the user to choose from.    
+            options for the user to choose from.
     """
     def __init__(self):
         """

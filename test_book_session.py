@@ -1,9 +1,8 @@
 """
 Unit tests for BookSession.
 """
-import pytest
 import os
-
+import pytest
 from book_session import BookSession
 
 # Define sets of test cases
@@ -20,7 +19,7 @@ check_for_key_word_cases = [
     # Check that text with no audio cue returns None
     ("awful awesome teacher cloud", None),
     # Check that text with one word that is the cue returns the key word for it
-    ("ran", "Footsteps"), 
+    ("ran", "Footsteps"),
     # Check that text with >1 word that is the cue returns the key word for it
     ("ran far away", "Footsteps"),
     # Check that text with >1 word that is the cue (not at the beginning)
@@ -40,7 +39,7 @@ check_for_key_word_cases = [
 find_audio_location_cases = [
     # Check that each key name returns the correct list representing the
     # location of corresponding audio files for 'Music' related keys
-    ("Beginning", ["Music", "Beginning"]), 
+    ("Beginning", ["Music", "Beginning"]),
     ("Sad", ["Music", "Sad"]),
     # Check that each key name returns the correct list representing the
     # location of corresponding audio files for 'Sound_Effects' related keys
@@ -71,7 +70,7 @@ add_key_word_cases = [
     # Check that one audio cue is added correctly to the dictionary when the
     # category for the key word already exists in the dictionary.
     ([["Beginning", "hello"]]),
-    # Check that >1 audio cues are added correctly when all key words are in 
+    # Check that >1 audio cues are added correctly when all key words are in
     # categories that already exist in the dictionary.
     ([["Footsteps", "runs"], ["Sad", "depressed"], ["Knock", "bang"]]),
     # Check that one audio cue is added correctly when the category for it
@@ -185,19 +184,19 @@ def test_pick_random_audio(key):
     files corresponding to it's location is given.
 
     Args:
-        key: A string representing the category name related to which the 
+        key: A string representing the category name related to which the
             audio file will be randomly chosen.
     """
     book_sess = BookSession()
     book_sess.find_audio_location(key)
-    assert book_sess.pick_random_audio() in os.listdir(f"Audio/" +
-        f"{book_sess.get_location()[0]}/{book_sess.get_location()[1]}/")
+    assert book_sess.pick_random_audio() in os.listdir\
+        (f"Audio/{book_sess.get_location()[0]}/{book_sess.get_location()[1]}/")
 
 @pytest.mark.parametrize("key_to_word_list", add_key_word_cases)
 def test_add_key_word(key_to_word_list):
     """
     Check that the new audio cues from the list inputted are correctly added
-    to the dictionary. 
+    to the dictionary.
 
     Args:
         key_to_word_list: A list of strings where the first string is the name
@@ -209,7 +208,7 @@ def test_add_key_word(key_to_word_list):
 
     all_added_correctly = True
     for new_audio_cue in key_to_word_list:
-        if book_sess.check_for_key_word(new_audio_cue[1]) == None:
+        if book_sess.check_for_key_word(new_audio_cue[1]) is None:
             all_added_correctly = False
-        
-    assert all_added_correctly == True
+
+    assert all_added_correctly is True
