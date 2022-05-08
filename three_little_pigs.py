@@ -35,12 +35,12 @@ class ThreeLittlePigs(BookSession):
         super().__init__()
 
         # Add specific words to the keys for each music group
-        self._new_keywords = [["Happy", "you can"], ["Happy", "playing"], \
-            ["Happy", "happy"], ["Straw", "straw"], ["Stick", "stick"], \
+        self._new_keywords = [["Festive", "you can"], ["Festive", "playing"], \
+            ["Festive", "happy"], ["Straw", "straw"], ["Stick", "stick"], \
             ["Brick", "brick"], ["Howl", "wolf"], ["Fire", "boil"], \
-            ["Water", "splash"], ["Water", "kettle"], ["Happy", "trouble"]]
+            ["Water", "splash"], ["Water", "kettle"], ["Festive", "trouble"]]
 
         self._key_words = self.add_key_word(self._new_keywords)
         self._sound_effect_keys = self._sound_effect_keys + ["Straw", "Stick", \
             "Brick", "Howl", "Water"]
-        self._music_keys = self._music_keys + ["Happy"]
+        self._music_keys = self._music_keys + ["Festive"]
