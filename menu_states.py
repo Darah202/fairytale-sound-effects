@@ -42,10 +42,8 @@ class FairytaleMenu:
             if int(book_number) == 1 or int(book_number) == 2:
                 
                 book_title = self._menu_options[int(book_number)-1]
-                print(book_title)
                 book_file = self._story_file[int(book_number)-1]
-                print(book_file)
-                return str(self._menu), book_title, book_file
+                return book_title, book_file
 
     def book_choice(self, book_title, book_file):
         """

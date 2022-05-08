@@ -17,7 +17,7 @@ def main():
 
     # Ask user for book
     which_book = menu.ask_which_book()
-    book_chosen = menu.book_choice(which_book[1], which_book[2])
+    book_chosen = menu.book_choice(which_book[0], which_book[1])
 
     # Listen for audio cues for the book chosen
     sound_effects = AudioController(book_chosen)
