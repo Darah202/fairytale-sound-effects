@@ -141,8 +141,8 @@ class BookSession():
         specified.
         """
 
-        all_files = os.listdir(f"Audio/{self._location[0]}/" +
-            f"{self._location[1]}/")
+        all_files = os.listdir\
+            (f"Audio/{self._location[0]}/{self._location[1]}/")
         if ".DS_Store" in all_files:
             all_files.remove(".DS_Store")
         print(f"all_files:  {all_files}")
@@ -161,8 +161,8 @@ class BookSession():
         file_name = self.pick_random_audio()
 
         # Play the file for up to 6 seconds
-        pygame.mixer.music.load(f"Audio/{location[0]}/" +
-            f"{location[1]}/{file_name}")
+        pygame.mixer.music.load\
+            (f"Audio/{location[0]}/{location[1]}/{file_name}")
         pygame.mixer.music.play()
         time.sleep(6)
 
