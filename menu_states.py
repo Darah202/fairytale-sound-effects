@@ -31,13 +31,19 @@ class FairytaleMenu:
         A tuple including a string representing '_menu' and a string
         representing the name of the book.
         """
-        book_number = input("Select a book - type the number of the book and"+\
-            " press enter \n 1. Cinderella \n 2. The 3 Little Pigs\n")
 
-        book_title = self._menu_options[int(book_number)-1]
-        book_file = self._story_file[int(book_number)-1]
+        real_book = False
 
-        return str(self._menu), book_title, book_file
+        while real_book is False:
+
+            book_number = input("Select a book - type the number of the book"+\
+                " and press enter \n 1. Cinderella \n 2. The 3 Little Pigs\n")
+
+            if int(book_number) == 1 or int(book_number) == 2:
+                
+                book_title = self._menu_options[int(book_number)-1]
+                book_file = self._story_file[int(book_number)-1]
+                return book_title, book_file
 
     def book_choice(self, book_title, book_file):
         """
