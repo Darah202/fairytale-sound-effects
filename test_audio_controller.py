@@ -11,7 +11,7 @@ find_and_play_key_word_cases = [
     ("Beginning"),
     ("Sad"),
     # Check that each key name returns the correct list representing the
-    # location of corresponding audio files for 'Sound_Effects' related keys
+    # location of correspon ding audio files for 'Sound_Effects' related keys
     ("Huff"),
     ("Fire"),
     ("Footsteps"),
