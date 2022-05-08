@@ -1,7 +1,4 @@
 TO ADD:
-Sound_Effects - Wind
-Sound_Effects - Straw
-Sound_Effects - Stick
 Sound_Effects - Brick
 Sound_Effects - Howl
 Sound_Effects - Water
