@@ -1,3 +1,4 @@
+TO FIX:
 Beginning 2
 Sad 2
 Sad 3
@@ -8,3 +9,11 @@ Horse 4
 Huff 2
 Knock 2
 Laughter 4
+
+TO ADD:
+Music - Happy
+Sound_Effects - Straw
+Sound_Effects - Stick
+Sound_Effects - Brick
+Sound_Effects - Howl
+Sound_Effects - Water
