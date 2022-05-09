@@ -15,7 +15,7 @@ The architecture for this project was made in accordance with the MVC structure 
 - **View**: The code involving an user interface (the abstract class `View` and the text based menu `MenuStates`)
 - **Controller**: The code that integrates the various aspects of the model and controls the input of audio for an entire session for a book (`AudioController`)
 
-![Class Structure](class_structure.png)
+![Class Structure](class_diagram.png)
 
 ## **Setup and Installation:**
 
