@@ -30,6 +30,8 @@ Audio Playing:
 3. random - This should come as part of the Python package
 4. pygame - `pip install pygame`
 
+* Note that getit is used for one of the functions to get a `txt` file, which is specific to Linux. On other systems, this will show as an error message. However, it should not affect the program's function in any way.
+
 ### A Note about Pytest: ###
 The following files in the repository are used for testing purposes. These cover all relevant scenarios for testing purposes:
 
