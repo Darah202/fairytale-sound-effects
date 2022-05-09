@@ -8,7 +8,6 @@ class MenuView(ABC):
     Abstract base class representing a view menu for the fairytale sound effect
     player.
 
-
     Attributes:
         _menu: A FairytaleMenu instance representing the menu to display.
     """

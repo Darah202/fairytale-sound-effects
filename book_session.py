@@ -139,7 +139,6 @@ class BookSession():
         A string representing the name of a random file inside the path
         specified.
         """
-
         all_files = os.listdir\
             (f"Audio/{self._location[0]}/{self._location[1]}/")
         if ".DS_Store" in all_files:

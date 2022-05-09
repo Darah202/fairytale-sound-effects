@@ -12,6 +12,8 @@ class FairytaleMenu:
         _menu: A string representing the input from the user.
         _menu_options: A list of strings representing the different story
             options for the user to choose from.
+        _story_file: A list of strings representing the txt file names of the
+            story options.
     """
     def __init__(self):
         """
@@ -56,6 +58,8 @@ class FairytaleMenu:
 
         Args:
             book_title: A string representing the name of the chosen book
+            book_file: A string representing the name of the txt file containing
+                the story for the book.
 
         Returns:
         A string representing the title of the book chosen by the user.

@@ -23,7 +23,6 @@ class Listener():
         # Use default system microphone as source
         self._mic = sr.Microphone()
 
-
     def listening(self):
         """
         Record 3 seconds of audio and transcribe to text.
