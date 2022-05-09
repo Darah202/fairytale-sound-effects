@@ -82,7 +82,6 @@ class AudioController():
         A boolean representing whether a random audio file for the key word
         specified was able to be played or not.
         """
-        print(f"key_word:  {key_word}")
         self._session.find_audio_location(key_word)
         return self._session.play_audio()
 

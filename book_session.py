@@ -94,7 +94,6 @@ class BookSession():
         for key, value in self._key_words.items():
             for word in value:
                 if word in transcribed_text:
-                    print(word)
                     return key
         return None
 
@@ -129,7 +128,6 @@ class BookSession():
 
         # Pick the nested folder
         location = location + [key]
-        print(f"final location:  {location}")
 
         self._location = location
 
@@ -146,7 +144,6 @@ class BookSession():
             (f"Audio/{self._location[0]}/{self._location[1]}/")
         if ".DS_Store" in all_files:
             all_files.remove(".DS_Store")
-        print(f"all_files:  {all_files}")
         return random.choice(all_files)
 
     def play_audio(self):
@@ -168,7 +165,6 @@ class BookSession():
         # Play the file for up to 6 seconds
         pygame.mixer.music.load\
             (f"Audio/{location[0]}/{location[1]}/{file_name}")
-        print(f"File: {file_name}")
 
         # Try playing the audio or else return False (exception)
         try:
