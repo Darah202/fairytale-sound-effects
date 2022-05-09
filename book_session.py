@@ -34,10 +34,10 @@ class BookSession():
         pygame.init()
         pygame.mixer.init()
 
-        self._key_words = {"Beginning": ["once upon a time", \
-            "happily ever after"], "Huff": ["huff, hoff"], \
-            "Fire": ["fire"], "Footsteps": ["running", "ran", "walk", "walking"\
-            ], "Laughter": ["laugh"], "Sad": ["sad"], "Horse": ["horse"], \
+        self._key_words = {"Beginning": ["time", "happily ever after"], \
+            "Huff": ["huff, hoff"], "Fire": ["fire"], \
+            "Footsteps": ["running", "ran", "walk", "walking"], \
+            "Laughter": ["laugh"], "Sad": ["sad"], "Horse": ["horse"], \
             "Clock": ["dong"], "Knock": ["knock", "knocked"]}
         self._sound_effect_keys = ["Huff", "Fire", "Footsteps", "Laughter", \
             "Horse", "Clock", "Knock"]
@@ -94,6 +94,7 @@ class BookSession():
         for key, value in self._key_words.items():
             for word in value:
                 if word in transcribed_text:
+                    print(word)
                     return key
         return None
 

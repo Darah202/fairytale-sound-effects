@@ -38,7 +38,8 @@ class ThreeLittlePigs(BookSession):
         self._new_keywords = [["Festive", "you can"], ["Festive", "playing"], \
             ["Festive", "happy"], ["Straw", "straw"], ["Stick", "stick"], \
             ["Brick", "brick"], ["Howl", "wolf"], ["Fire", "boil"], \
-            ["Water", "splash"], ["Water", "kettle"], ["Festive", "trouble"]]
+            ["Water", "splash"], ["Water", "kettle"], ["Festive", "trouble"], \
+            ["Huff", "blue"]]
 
         self._key_words = self.add_key_word(self._new_keywords)
         self._sound_effect_keys = self._sound_effect_keys + ["Straw", "Stick", \
