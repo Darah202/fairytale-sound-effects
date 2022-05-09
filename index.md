@@ -1,7 +1,7 @@
 # Magical Tales
 
 ## About the Project
-Imagine telling your child a bedtime story, when suddenly, the Big Bad Wolf howls! Exciting, right? This program responds with audio in response to the story you are telling. On specific cues, audio is played through the program. Currently, there is both a basic version that can be applied to all fairy tales and individualized sessions for the stories Cinderella and Three Little Pigs. Now, your stories can come to life.
+Imagine telling your child a bedtime story, when suddenly, the Big Bad Wolf howls! Exciting, right? We introduce _Magical Tales_, a program that responds with audio to the story you are telling. Implemented in Python3, Magical Tales currently can provide audio for both a general version that can be applied to all fairy tales and individualized sessions for the stories Cinderella and Three Little Pigs. Now, your stories can come to life!
 
 Interactive Fairytales was created by, and is the intellectual property of, Rucha Dave and Emma Mascillaro. Developed as a final project for Software
 Design at Olin College of Engineering, the ultimate purpose of this project was to explore Speech Recognition and practice developing complex architecture with respect to a MVC (Model, View, Controller) structure.
