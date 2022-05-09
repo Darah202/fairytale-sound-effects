@@ -12,6 +12,8 @@ Check out our source code for documentation and watch an example run in action!
 
 [Cinderella Demo](video1106553709.mp4)
 
+[General Demo](general_story (1).mp4)
+
 ## MVC Design
 
 Our code is separated into three main logical components: Model, View, Controller. Each architecture component handles one of the main aspects of the program.
