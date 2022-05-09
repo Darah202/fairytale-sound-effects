@@ -18,7 +18,7 @@ Watch an example run in action!
 
 [Cinderella Demo](https://youtu.be/k2Xx3tF9fuc)
 
-[Three Little Pigs Demo](three_little_pigs_recording(2).mp4)
+[Three Little Pigs Demo](https://youtu.be/zfpG1zSkq6o)
 
 [General Demo](https://youtu.be/70k7fkdcoTs)
 
