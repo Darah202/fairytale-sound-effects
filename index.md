@@ -6,13 +6,18 @@ Imagine telling your child a bedtime story, when suddenly, the Big Bad Wolf howl
 Interactive Fairytales was created by, and is the intellectual property of, Rucha Dave and Emma Mascillaro. Developed as a final project for Software
 Design at Olin College of Engineering, the ultimate purpose of this project was to explore Speech Recognition and practice developing complex architecture with respect to a MVC (Model, View, Controller) structure.
 
-Check out our source code for documentation and watch an example run in action!
+Check out our source code for documentation.
 
 [Source Code](https://github.com/olincollege/fairytale-sound-effects)
 
+Watch an example run in action!
+
 [Cinderella Demo](video1106553709.mp4)
 
+[Three Little Pigs Demo](three_little_pigs_recording(2).mp4)
+
 [General Demo](general_story(1).mp4)
+
 
 ## MVC Design
 
