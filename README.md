@@ -24,11 +24,11 @@ Audio Playing:
 ### A Note about Pytest: ###
 The following files in the repository are used for testing purposes:
 
-`test_audio_controller.py` \n
-`test_book_session.py`
-`test_cinderella.py`
-`test_three_little_pigs.py`
-`test_menu_states.py` - In order to properly run this Pytest, use the `-s` command line option to give user input
+* `test_audio_controller.py`
+* `test_book_session.py`
+* `test_cinderella.py`
+* `test_three_little_pigs.py`
+* `test_menu_states.py` - In order to properly run this Pytest, use the `-s` command line option to give user input
 
 Testing for the Audio Listener was performed through rigorous manual testing. 
 
