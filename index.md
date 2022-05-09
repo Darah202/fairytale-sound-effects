@@ -1,8 +1,9 @@
 # Magical Tales
-## Interactive Fairytales
 
 ## About the Project
-This program provides the user with interactive audio in response to a story they are telling. Based on specific audio cues, corresponding audio files are played through the program. This includes both a basic version that could be applied to all fairy tales and individualized audio cues for specific tales such as Cinderella and Three Little Pigs.
+Imagine telling your child a bedtime story, when suddenly the Big Bad Wolf roars!
+
+This program provides interactive audio in response to a story being told. Based on specific audio cues, corresponding audio files are played through the program. This includes both a basic version that could be applied to all fairy tales and individualized audio cues for specific tales such as Cinderella and Three Little Pigs. Now, your stories can come to life.
 
 Interactive Fairytales was created by, and is the intellectual property of, Rucha Dave and Emma Mascillaro. Developed as a final project for Software
 Design at Olin College of Engineering, the ultimate purpose of this project was to explore Speech Recognition and practice developing complex architecture with respect to a MVC (Model, View, Controller) structure.
@@ -19,8 +20,6 @@ Our code is separated into three main logical components: Model, View, Controlle
 
 ### Code Architecture
 
-<INSERT DESCRIPTION OF ARCHITECTURE AND HOW EACH FILE CONTRIBUTES TO IT>
-
-- Model
-- View
-- Controller
+- Model: The code to connect audio cues to directories and play the correct audio (BookSession and subclasses Cinderella and ThreeLittlePigs) as well as code involving speech recognition (Listener)
+- View: The code involving an user interface (the abstract class View and the text based MenuStates)
+- Controller: The code that integrates the various aspects of the model and controls an entire session for a book (AudioController)
