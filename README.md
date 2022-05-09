@@ -1,23 +1,14 @@
-# fairytale_sound_effects
+# Fairytale Sound Effects
 #### Authors: Emma Mascillaro, Rucha Dave
 
 ## **Project Summary**:
 This repository contains our 2022 Software Design Final project.
 
-This interactive application uses Speech Recognition to play sound effects as a user reads a story out loud.  Audio data is collected as a user speaks and is transcribed to text using Google's Speech Recognition API.  
+This interactive application uses Speech Recognition to play sound effects as a user reads a story out loud.  Audio data is collected as a user speaks and is transcribed to text using Google's Speech Recognition API.  When keywords are recognized in the user's speech, corresponding sound effects are played in order to enhance the reader's reading experience.
 
-Some challenges faced in this 
+Some challenges faced in this project included the timeout and delay involved when using SpeechRecognition.  In the future, we plan to switch to using LiveSpeech from pocketsphinx in order to reduce this time delay. 
 
-
-What your application does,
-Why you used the technologies you used,
-Some of the challenges you faced and features you hope to implement in the future.
-
-
-## **Instructions:**
-### **Dependancies:**
-
-In order to collect, clean, and visualize the our data, we utiziled mutliple Python libraries. 
+## **Installation:**
 
 Audio Transcription:
 1. SpeechRecognition - `pip install SpeechRecognition`
