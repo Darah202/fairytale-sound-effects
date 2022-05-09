@@ -19,7 +19,7 @@ The architecture for this project was made in accordance with the MVC structure 
 
 ## **Setup and Installation:**
 
-Clone this github repository onto your local device and install the following Python Packages.
+Clone this github repository onto your local device and install the following Python Packages. Ensure that the Python version is **Python3**
 
 Audio Transcription:
 1. SpeechRecognition - `pip install SpeechRecognition`
