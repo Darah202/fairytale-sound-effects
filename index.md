@@ -28,7 +28,7 @@ Our code is separated into three main logical components: Model, View, Controlle
 ![Class Diagram](class_diagram.png)
 
 - **Model**: The code to connect audio cues to directories and play the correct audio (`BookSession` and subclasses `Cinderella` and `ThreeLittlePigs`) as well as code involving speech recognition (`Listener`) and the code to gain input for the menu (`MenuStates`)
-  ![Menu](audio_interaction.png)
+  ![Menu](cropped_audio_interaction.png)
 - **View**: The code involving viewing an user interface (`View` - Abstract class and text-based subclass)
   ![Menu](menu_picture.png)
 - **Controller**: The code that integrates the various aspects of the model and controls the input of audio for an entire session for a book (`AudioController`)
