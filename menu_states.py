@@ -20,8 +20,9 @@ class FairytaleMenu:
         """
         self._menu = input("Welcome to Fairytale Sound Effects!  Press enter"+\
             " to begin")
-        self._menu_options = ["Cinderella", "The 3 Little Pigs"]
-        self._story_file = ["cinderella.txt", "three_little_pigs.txt"]
+        self._menu_options = ["Cinderella", "The 3 Little Pigs", "General"]
+        self._story_file = ["cinderella.txt", "three_little_pigs.txt", \
+            "general.txt"]
 
     def ask_which_book(self):
         """
@@ -37,13 +38,16 @@ class FairytaleMenu:
         while real_book is False:
 
             book_number = input("Select a book - type the number of the book"+\
-                " and press enter \n 1. Cinderella \n 2. The 3 Little Pigs\n")
+                " and press enter \n 1. Cinderella \n 2. The 3 Little Pigs\n" \
+                "3. General")
 
-            if int(book_number) == 1 or int(book_number) == 2:
+            if int(book_number) == 1 or int(book_number) == 2 or \
+                int(book_number) == 3:
 
                 book_title = self._menu_options[int(book_number)-1]
                 book_file = self._story_file[int(book_number)-1]
                 return book_title, book_file
+
 
     def book_choice(self, book_title, book_file):
         """

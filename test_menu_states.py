@@ -12,7 +12,8 @@ def test_valid_book():
     """
     menu = FairytaleMenu()
     book_info = menu.ask_which_book()
-    assert "Cinderella" in book_info[0] or "The 3 Little Pigs" in book_info[0]
+    assert "Cinderella" in book_info[0] or "The 3 Little Pigs" in book_info[0] \
+        or "General" in book_info[0]
 
 def test_opened_text_file():
     """
@@ -20,5 +21,6 @@ def test_opened_text_file():
     """
     menu = FairytaleMenu()
     book_info = menu.ask_which_book()
-    assert "cinderella.txt" in book_info[1] or "three_little_pigs.txt" in book_info[1]
+    assert "cinderella.txt" in book_info[1] or "three_little_pigs.txt" in \
+        book_info[1] or "general.txt" in book_info[1]
     
