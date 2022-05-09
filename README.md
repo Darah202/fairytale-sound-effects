@@ -12,7 +12,7 @@ Some challenges faced in this project included the timeout and delay involved wh
 The architecture for this project was made in accordance with the MVC structure (Model, View, Controller). 
 
 - **Model**: The code to connect audio cues to directories and play the correct audio (`BookSession` and subclasses `Cinderella` and `ThreeLittlePigs`) as well as code involving speech recognition (`Listener`) and the code to gain input for the menu (`MenuStates`)
-- **View**: The code involving an user interface (`View` - Abstract class and text-based subclass)
+- **View**: The code involving viewing an user interface (`View` - Abstract class and text-based subclass)
 - **Controller**: The code that integrates the various aspects of the model and controls the input of audio for an entire session for a book (`AudioController`)
 
 ![Class Structure](class_diagram.png)
