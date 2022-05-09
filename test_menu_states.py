@@ -1,8 +1,6 @@
 """
 Unit tests for the Menu.
 """
-import pytest
-
 from menu_states import FairytaleMenu
 
 # Define standard testing functions to check functions' outputs given certain
