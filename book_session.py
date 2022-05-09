@@ -34,11 +34,11 @@ class BookSession():
         pygame.init()
         pygame.mixer.init()
 
-        self._key_words = {"Beginning": ["once upon a time", "happily ever after"], \
-            "Huff": ["huffed", "huff", "hoff"], "Fire": ["fire"], \
-            "Footsteps": ["running", "ran", "walk", "walking"], \
-            "Laughter": ["laugh"], "Sad": ["sad"], "Horse": ["horse"], \
-            "Clock": ["dong"], "Knock": ["knock", "knocked"]}
+        self._key_words = {"Beginning": ["once upon a time", \
+            "happily ever after"], "Huff": ["huffed", "huff", "hoff"], \
+            "Fire": ["fire"], "Footsteps": ["running", "ran", "walk", \
+            "walking"], "Laughter": ["laugh"], "Sad": ["sad"], "Horse": \
+            ["horse"], "Clock": ["dong"], "Knock": ["knock", "knocked"]}
         self._sound_effect_keys = ["Huff", "Fire", "Footsteps", "Laughter", \
             "Horse", "Clock", "Knock"]
         self._music_keys = ["Beginning", "Sad"]
