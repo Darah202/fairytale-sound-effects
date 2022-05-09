@@ -38,8 +38,8 @@ class FairytaleMenu:
         while real_book is False:
 
             book_number = input("Select a book - type the number of the book"+\
-                " and press enter \n 1. Cinderella \n 2. The 3 Little Pigs\n" \
-                "3. General")
+                " and press enter \n 1. Cinderella \n 2. The 3 Little Pigs\n"+\
+                " 3. General\n")
 
             if int(book_number) == 1 or int(book_number) == 2 or \
                 int(book_number) == 3:
