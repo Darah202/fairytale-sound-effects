@@ -18,6 +18,9 @@ Watch an example run in action!
 
 [General Demo](general_story(1).mp4)
 
+Or run the program yourself by following the instructions linked here!
+
+[Instructions](https://github.com/olincollege/fairytale-sound-effects/blob/main/README.md)
 
 ## MVC Design
 
