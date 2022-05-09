@@ -10,13 +10,17 @@ Check out our source code for documentation.
 
 [Source Code](https://github.com/olincollege/fairytale-sound-effects)
 
+Hear about how our project works.
+
+[Program Overview](https://youtu.be/hBEUFOC8ql8)
+
 Watch an example run in action!
 
-[Cinderella Demo](video1106553709.mp4)
+[Cinderella Demo](https://youtu.be/k2Xx3tF9fuc)
 
 [Three Little Pigs Demo](three_little_pigs_recording(2).mp4)
 
-[General Demo](general_story(1).mp4)
+[General Demo](https://youtu.be/70k7fkdcoTs)
 
 Or run the program yourself by following the instructions linked here!
 
@@ -31,7 +35,7 @@ Our code is separated into three main logical components: Model, View, Controlle
 ![Class Diagram](class_diagram.png)
 
 - **Model**: The code to connect audio cues to directories and play the correct audio (`BookSession` and subclasses `Cinderella` and `ThreeLittlePigs`) as well as code involving speech recognition (`Listener`) and the code to gain input for the menu (`MenuStates`)
-  ![Menu](cropped_audio_interaction.png)
+  ![Audio Interaction](cropped_audio_interaction.png)
 - **View**: The code involving viewing an user interface (`View` - Abstract class and text-based subclass)
   ![Menu](menu_picture.png)
 - **Controller**: The code that integrates the various aspects of the model and controls the input of audio for an entire session for a book (`AudioController`)
