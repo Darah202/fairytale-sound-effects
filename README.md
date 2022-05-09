@@ -2,7 +2,16 @@
 #### Authors: Emma Mascillaro, Rucha Dave
 
 ## **Project Summary**:
-This repository contains our 2022 Software Design Final project which
+This repository contains our 2022 Software Design Final project.
+
+This interactive application uses Speech Recognition to play sound effects as a user reads a story out loud.  Audio data is collected as a user speaks and is transcribed to text using Google's Speech Recognition API.  
+
+Some challenges faced in this 
+
+
+What your application does,
+Why you used the technologies you used,
+Some of the challenges you faced and features you hope to implement in the future.
 
 
 ## **Instructions:**
@@ -13,15 +22,15 @@ In order to collect, clean, and visualize the our data, we utiziled mutliple Pyt
 Audio Transcription:
 1. SpeechRecognition - `pip install SpeechRecognition`
 
-Data Cleaning:
-1. glob - This should come as part of the Python package
+Audio Playing:
+1. time - This should come as part of the Python package
+2. os - This should come as part of the Python package
+3. random - This should come as part of the Python package
+4. pygame - `pip install pygame`
 
-Data Visualizing: 
-1. geopandas - `pip install geopandas`
-2. numpy - `pip install numpy`
-3. matplotlib - `pip install matplotlib`
+### **Running the Program:**
+In order to run the program
 
-### **Running Scraping:**
 All functions needed to scrap Niche are included in the file *niche_web_scraping.py*. 
 
 In order to run this, run the following command in the terminal to navigate to the web_scraping folder: `cd web_scraping`. Run the *runner_scraping.py* file. This will create a folder called *testing* within the web_scraping folder which will contain a folder called *raw_data*, which will have csv files for all the data scraped. 
