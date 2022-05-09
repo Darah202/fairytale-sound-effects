@@ -20,7 +20,7 @@ Our code is separated into three main logical components: Model, View, Controlle
 
 ### Code Architecture
 
-![Class Diagram]()
+![Class Diagram](class_diagram.png)
 
 - **Model**: 
   The code to connect audio cues to directories and play the correct audio (BookSession and subclasses Cinderella and ThreeLittlePigs) as well as code involving speech recognition (Listener)
