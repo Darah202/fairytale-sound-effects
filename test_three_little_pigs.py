@@ -12,7 +12,7 @@ audio_cue_cases = [
     ("boil", "Fire"),
     # Check that the audio cues are added to the dictionary for ThreeLittlePigs
     # for categories (keys) not existing.
-    ("you can", "Happy"),
+    ("you can", "Festive"),
     ("wolf", "Howl"),
     ("kettle", "Water")
 ]
@@ -39,7 +39,7 @@ def test_music_keys():
     added to the list '_music_keys'.
     """
     pigs = ThreeLittlePigs()
-    assert "Happy" in pigs.get_music_keys()
+    assert "Festive" in pigs.get_music_keys()
 
 @pytest.mark.parametrize("audio_cue, category_name", audio_cue_cases)
 def test_audio_cues(audio_cue, category_name):

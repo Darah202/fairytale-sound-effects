@@ -40,7 +40,7 @@ class FairytaleMenu:
                 " and press enter \n 1. Cinderella \n 2. The 3 Little Pigs\n")
 
             if int(book_number) == 1 or int(book_number) == 2:
-                
+
                 book_title = self._menu_options[int(book_number)-1]
                 book_file = self._story_file[int(book_number)-1]
                 return book_title, book_file
