@@ -10,7 +10,7 @@ Check out our source code for documentation and watch an example run in action!
 
 [Source Code](https://github.com/olincollege/fairytale-sound-effects)
 
-[Example Video](ADD LINK HERE)
+[Cinderella Demo](video1106553709.mp4)
 
 ## MVC Design
 
